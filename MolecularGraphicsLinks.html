@@ -1,0 +1,562 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<head>
+<!-- official OU colors:  crimson #4F1315 cream #FDF908  source: https://alumni.ou.edu/home/webcomm/webguide/designconsiderations.html -->
+<!-- off white #f5f4f0   reddish slate #E4D2C1  OU brickred #4F1315   light green #FFEFB2  light blue #F6F8FF   light-green #fceeaf   royal blue #0D2A70   light-green #FFFCCC  light gray F6F4F0  medium gray=#C0C0C0 -->
+<!--<body bgcolor=#FDF9D8  style="font-family:arial;font-size:15px"> -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<body bgcolor=#C0C0C0  style="font-family:arial;font-size:15px">
+
+<style type="text/css">
+		body { background:url("http://www.oumedicine.com/images/default-source/ad-biochemistry/40mer7inches.png?sfvrsn=1") top right no-repeat; background-attachment:fixed;  }
+		#content{
+		background: none repeat scroll 0 0 transparent;
+		}
+</style>
+
+
+<style type="screen.css">
+A:link {text-decoration: none; : black}
+A:visited {text-decoration: : orange}
+A:active {text-decoration: : brown}
+A:hover {text-decoration: underline; : red;}
+    .centeredImage
+    {
+    text-align:center;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding:0px;
+    }
+</style>
+<style>
+table {
+  border:1px solid red;
+  width:100%;
+  table-layout:fixed;
+}
+table tr th, 
+table tr td{
+  height:25px;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border:1px solid red;
+}
+</style>
+</head>
+
+<div style="width:1000px;">
+<h1>Links for <em>Molecular Structure Analysis and Graphics in Biomedical Sciences</em> </h1>
+<p>This is a five week course (15 hours) offered in the Spring Semester at OUHSC every year since 2010. The purpose of the course is to build the competence of gradute students in interpreting molecular strutures of proteins. We use PyMOL to visualize molecular strutures and other software to analyze the structures. All of the software listed on this webpage is free to academics. We do not do any programming. However, the skills gained and principles understood by working with the software will transfer to other biomolecular software that the students will encounter later in their research careers. We use the book <strong>Structural Bioinformatics</strong> edited by Gu and Bourne as a textbook. </p>
+
+
+
+<p style="margin-left:.5in"><b>Lectures: </b><A name="INDICES"><br>
+
+<A href="#1"> 1 Introduction and PyMOL Installation</A> <br>
+<A href="#2"> 2 PDB files and PyMOL Basics</A><br>
+<A href="#3"> 3 Heteroatoms and Molecular Surfaces</A><br>
+<A href="#4"> 4 Structure Evaluation</A><br>
+<A href="#5"> 5 Protein Evolution and Prediction of Protein-Protein Interations</A><br>
+<A href="#6"> 6 Structure Superposition and Identifying Molecular Motion from Static Models</A><br>
+<A href="#7"> 7 Modeling and Dynamics</A><br>
+<A href="#8"> 8 Using Rosetta with PyMOL</A><br>
+<A href="#9"> 9 Ligand Docking and Designing Mutants</A><br>
+<A href="#10"> 10 Molecular Movies and Journal Cover Art </A>
+</p>
+
+
+<h2><a name="1">Lecture 1: Introduction and PyMOL installation</h2>
+
+<p> PyMOL was developed by Warren Delano starting in 1998 until his untimely death in 2009. PyMOL is now maintianed by Schr&ouml;dinger Inc. The program is written in C for fast execution. The users interact with the PyMOL binary through a Python-based interface, hence the <strong>Py</strong> in PyMOL. The current binaries are available to subscribers who pay an annual subscription fee. New binaries are released about once every four months. The improvements are minor and incremental and sometimes break existing features. It is a good idea to hang onto several earlier versions. A version number greater than 1.72 is current enough for most purposes. The subscribers also get access to on-line documentation and to personalized technical support from the developers of PyMOL. The latter is helpful if you want to do something that is not available already through existing commands or scripts.</p>
+
+<p>The large and active community of users have added a lot of functionality to PyMOL by contributing scripts and plugins and suggestions for better or new features. To acknowledge the contributions of the user community contributions, the penultimate and older binaries are available for free from other sources. I suggest using the other sources until you know that you will be using PyMOL frequently. The source code is available at sourceforge.net. However, it is a challenge to install PyMOL from source because you have to have a number of other dependent software already installed. I have succeeded in compiling PyMOL from the source code only on Ubuntu Linux. See the Linux install link below.</p>
+
+<h3>Free, unsupported sources of PyMOL</h3>
+<ul>
+	<li> For all platforms, the easist approach is to install PyMOL from the PyPI repository of Python software. You need to have Python 2.7 installed. You may need to install the program <strong>easy_install</strong> and then <strong>pip</strong>. Next, on the command line, enter <strong>sudo -H pip install pymol</strong>. You can upgrade at a later time with the command <strong>sudo -H pip install --upgrade pymol</strong>. This form of PyMOL is launched by typing on the command line <strong>pymol</strong>.</li>
+<br>
+	<li><a href="https://pymolwiki.org/index.php/Windows_Install"><strong>Installing PyMOL on Windows.</strong></a> Detailed instructions on the PyMOL Wiki.</li>
+<br>
+	<li><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#pymol"><strong> Source of PyMOL installers for Windows.</a></strong> Visit the above link first. You need to know the version of your computer's Python. Check on the command line within an interactive Python session by entering <strong> import sys;print(sys.version)</strong>. You also need to understand how to use <strong>*.whl</strong> files to install software. See the <a href="http://sourceforge.net/p/pymol/mailman/search/?mail_list=pymol-­‐users" target="_blank" title="Pymol mailing list"><strong>PyMOL mailing list</strong></a> for posts about recent installation issues. You can also try searching for<a href="http://stackexchange.com/search?q=pymol"><strong>pymol on StackExchange.com</strong></a></li>
+<br>
+	<li> <a href="https://pymolwiki.org/index.php/MAC_Install"><strong>Installing PyMOL on Mac.</strong></a> These directions are at the PyMOL Wiki. You will need to have installed in advance the free <a href="https://developer.apple.com/xcode/download/"> Xcode</a> software (you will have to register for free as a developer even though you are not one), the command line tools, and <a href="https://www.xquartz.org/"> Xquartz.app </a>. You may have already install these software for other scientific programs that depend on X11. Then try using pip to install pymol as outlined above.
+
+	<p> You can also install PyMOL via one of the other software repositories for macOS: macports, fink, or homebrew. Select only one repository because they do not interact well together. I have used all three. I currently use macports, and I do not plan to switch because I find the documentation for the other repositories to be too hard to follow when I am having trouble installing software. PyMOL from these repositories is invoked by typing <strong>pymol</strong> on the command line. PyMOL from pip or the other repositories have the advantage of allowing access to the your other Python modules from within PyMOL. If you do not understand what that means, do not worry; it is not important to the basic operation of PyMOL.</p></li>
+<br>
+	<li><a href="https://pymolwiki.org/index.php/Linux_Install"><strong>Installing PyMOL on Linux.</strong></a> Note that the Ubuntu the version of PyMOL that is installed with <strong>apt-get</strong> is often out of date by seveal years but good enough for most uses.</li>
+</ul>
+
+
+<h3>Official source of PyMOL binaries</h3>
+<ul><li>
+	<p><strong><a href="http://www.pymol.org/" target="_blank" title="Pymol.org:">PyMOL.org.</a></strong> Source of paid current versions and free eductional versions of PyMOL. These binaries are generally easier to install. Howeve,for the Mac, you still need to have installed Xcode, the command line tools, and Xquartz.app in advance of installing PyMOL to able to convert MacPyMOL to PyMOLX11Hybrid. Only the hybrid version gives you the ability to install plugins. Xquartz is needed anyways to run X11 dependent scientific software on the Mac, so you will probably need Xquartz.app eventually. </p>
+	</li>
+</ul>
+
+
+<h3>Customizing your pymolrc file</h3>
+
+The pymolrc is an optional file in your home diretory that is read on startup by PyMOL. You put PyMOL Scripting Language commands or Python commands or settings in this file that are executed on startup. For example, it is useful to startup with a white background, so add the line <strong>bg_color white</strong>. Add one command per line (a vertical script) or join the commands with semicolons on one line (a horizontal scirpt). 
+
+<h3>Quick starts in PyMOL</h3>
+<p> There are dozens of the videos about PyMOL on YouTube, if you are patient enough to sit through them. Below at are some guides that may be a faster way to get going.</p>
+
+<ul>
+    <li><a href="http://www.oumedicine.com/docs/default-source/ad-biochemistry-workfiles/NSUworkshop.pdf" target="_blank" title="Base essentials of PyMOL<"><strong>Bare essentials of PyMOL.</a> </strong> This self-guided tutorial takes 20-40 minutes to work through. It covers the essentials, including saving an image to a file and rendering images in 3D for use witn red-cyan glasses. These <a"https://www.amazon.com/Glasses-Prescription-Movies-Gaming-Anaglyph/dp/B0058GN1AM">glasses</a> are very inexpensive and clip on versions are available.</li>
+ <br>
+    <li><a href="https://pymolwiki.org/index.php/Practical_Pymol_for_Beginners" target="_blank" title="Practical PyMOL For Beginners"><strong>Practical PyMOL For Beginners.</a></strong> This tutorial is more extensive than one above, and it is illustrated.</li>
+</ul>
+
+
+<h3>Sources of answers to frequently asked questions</h3>
+<ul>
+	<li><a href="http://pymolwiki.org/index.php/Main_Page" target="_blank" title="Pymol wiki"><strong>PyMOL Wiki Main Page</a></strong> A very extensive collecton of web pages. The first place to go for answers. Now maintained by the Strutural Biology Grid based at Harvard U. Actually, the <a href="https://pymolwiki.org/index.php/TOPTOC"> new table of contents</a> page is more useful for finding information. The old <a href="https://pymolwiki.org/index.php/OLD_TOPTOC"> table of contents</a> page is still useful too.</li>
+<br>
+	<li><a href="http://sourceforge.net/p/pymol/mailman/search/?mail_list=pymol-­‐users" target="_blank" title="Pymol mailing list"><strong>PyMOL mailing list.</strong></a> The vast archives of past posts go back to 2001 and are a good place to search for answers to questions that others have asked.</li>
+<br>
+	<li><a href="http://pymol.sourceforge.net/faq.html" target="_blank" title="FAQs about PyMOL at source forge"> <strong>FAQs about PyMOL at source forge.</strong></a> This is also the location of the source code.</li>
+<br>
+	<li><a href="http://stackexchange.com/search?q=pymol" target="_blank" title="Pymol source forge"> <strong>PyMOL questions and answers on stackexchange.</strong></a> Stackexchange has a rich collection of questions from the frequent and trivial to the arcane and interesting.</li>
+<br>
+	<li><a href="http://pymol.sourceforge.net/newman/user/toc.html" target="_blank" title="Warren L. DeLano 2004 PyMOL manual"> <strong>Warren L. DeLano 2004 PyMOL manual</a></strong> This is the official and free manual about PyMOL. Subscribers have access to on-line documentation. I am a subscriber, but I never use the latter because of I am too impatient to login. I relie on Google, the PyMOL Wiki, and the PyMOL User mailing list. </li>
+</ul>
+
+
+
+<h3> PyMOL commands, settings, and colors: the Nuts-and-Bolts of getting stuff done </h3>
+<p>The real power of PyMOL is in the exquisite control of the image provided by its commands and settings. For example, the ray command has over 50 settings! There is also exquisite control over the colors and the spectra used. You can string these commands and settings together on the command line with semicolons to form a horizontal script (watch this 4 minute video <a href="https://youtu.be/XRsAaKq4afs"> video </a> and vist this <a href="https://github.com/MooersLab/EasyPyMOL">webpage</a>, which explains horizontal scripting) that is easy to edit after recalling the executed code with the up arrow key. Try it! You will like it! But be careful. Horizontal scripting can be addictive!</p>
+
+<p>The PyMOL Scripting Language syntax may seem strange at first. The syntax is simply Python function calls without the parentheses and double quotes. If you do not know Python, you can still figure out the syntax quite quickly. </p>
+
+<ul>
+	<li><a href="http://pymolwiki.org/index.php/Category:Commands" target="_blank" title="PyMOL Commands"><strong>Commands.</strong></a> The verbs of PyMOL. </li>
+	<br>
+	<li><a href="https://pymolwiki.org/index.php/Psico" target="_blank" title="Pscio"><strong>Psico</strong></a> An additional set of commands from the Psico package--not part of the base distribution of PyMOL. These commands extend the capabiities of PyMOL. </li>
+	<br>
+	<li><a href="http://pymolwiki.org/index.php/Settings" target="_blank" title="Settings"><strong>Settings.</strong></a> The adjectives of PyMOL. There are over 600 of them!</li>
+	<br>
+	<li><a href="https://pymolwiki.org/index.php/Color_Values"> <strong>Colors.</strong></a> This page includes the spectral range color schemes.</li>
+	<br>
+	<li><a href="https://pymolwiki.org/index.php/Category:Representations"><strong>Representations.</strong></a> This page includes an index of web pages about each representation. Each webpage has a list of the relavant settings. A good place to go to quickly explore your options alternative representations. </li>
+	<br>
+	<li><a href="https://pymolwiki.org/index.php/Category:Biochemical_Properties"><strong>Biochemical Properties.</strong></a> This page is an index to 18 others pages about functions and scripts for measuring various biophyiscal properties of molecular structures.</li>
+</ul>
+
+
+<h3>Scripts and Plugins</h3>
+
+<p>The PyMOL commands are written in a user readable syntax. They are stored in plain text files with the file extension <strong>pml</strong>. They can be run by entering @ followed immediately by the name of the script file (e.g, @first.pml). I use this kind of script to make and edit figures for publication and movies for presnentations. The script enables me to tweak the figure at a later time or to use it as a template to make a similar figure with a new structure. The regulaur use of scripts enables the practice of reproducible research, so their use is a good habit to adopt, just like the keeping of laboratory notebook.</p>
+
+<p>The <strong>pml</strong> scripts are limited in their ability to call external programs and modules. Python scripts (they have the file extension <strong>py</strong>) are used for this purpose. Fortunately, the PyMOL commands can be included directly into Python scripts as arguments to the <strong>pymol.cmd()</strong> function. Python scripts are not as easy for nonprogrammers to interpret as the <strong>pml</strong> scripts.</p>
+
+<p>Python scripts extend what can be done with PyMOL. Some Python scripts run external programs. You may have to install these external programs separately.</p>
+
+<p>Plugins are Python scripts dressed up with graphical user interfaces (GUIs). The GUIs ease the initial exploratory use of a script. For this reason, they are required by the reviewers of papers about scripts. Plugins are not useful for large scale comparative studies due to the tedium and errors that occur with manual entry of parameter values for each structure.</p>
+
+<p>A collection of user-supplied scripts and plugins are stored in a repository on GitHub. You can install of these scripts and plugins locally by using the program <strong>git</strong>. Git is installed on the macOS with the Xcode command line tools. It can be invoked from the command line. It is used retrieve software from GitHub.com and to track updates to documents in plain text locally. On other operating systems, you may have to install <a href="https://pymolwiki.org/index.php/Git_install_scripts"><strong>git</strong></a>; use the link to the left to learn more. After installing git on your computer, you type <strong>git clone git://github.com/Pymo-Scripts/Pymol-script-repo.git</strong> in the folder where you want to store the plugins. This command will create the subfolder <strong>Pymol-script-repo</strong>. You can then use in PyMOL the very powerful built-in plugin manager developed by Dr. Thomas Holder to load these scripts and plugins into PyMOL. Later, you can go to the <strong>Pymol-script-repo</strong> folder and type <strong>git pull origin master</strong> to update your collection of plugins and scripts with new versions of the scripts and plugins and with new scripts and plugins that have been added to the repository since your last update. The use of git to retrieve and update your collection of plugins saves many hours of manual work. The plugin manager has also saved countless of hours of frustration with plugin installation. Unfortunately, not all scripts and plug-ins are stored in the git repository. Use PubMed, Google, or both to find additional PyMOL scripts and plugins.</p>
+
+<p>If you want to write your own plugin, there is a simple <a href="http://https://pymolwiki.org/index.php/Plugins_Tutorial">tutorial</a> on the PyMOL Wiki. PyMOL uses the Python module Tkinter for plugin GUI development. </p>
+
+<ul>
+	<li><a href="http://pymolwiki.org/index.php/Category:Plugins" target="_blank" title="Pymol plugins"><strong>Index of PyMOL plugins</strong></a></li>
+	<br>
+	<li><a href="http://pymolwiki.org/index.php/Category:Script_Library" target="_blank" title="Pymol scripts"><strong>Index of PyMOL scripts</strong></a></li>
+</ul>
+
+
+
+<h3>Text editors</h3>
+<p>Text editors are used to look inside PDB coordinate files and to edit PyMOL script files. PyMOL lacks a built-in text editor, although the text box in the command line of the external GUI does allow the copying and pasting of commands. PDB coordinate files and script files are written in plain text. MS Word (and TextEdit on macOS) write out documents to binary files by defualt. They are not really appropriate for editing plain text files. The following links are to free text editors that have GUIs. Just pick one to install if you do not have a favorite one already. I recommend <strong>Sublime Text 3 </strong>because it is intuitive and has sharp color contrast with <a href="http://fraserlab.com/2014/08/26/Pymol-highlighting/"><strong>syntax highlighting</strong></a> that eases the editing of script files. The simple command line editors <strong>nano</strong>and <strong>pico</strong> may already be installed on your computer. They work well enough to get the job done, but they lack color highlighting. The command line editors vim and emacs are very powerful, but they take months of daily practice to master.</p>
+
+
+<h4>Platform Independent, GUI-based Text Editors:</h4>
+<ul>
+<li><a href="http://www.sublimetext.com/3" target="_blank" title="Sublime Text 3">Sublime Text 3.</a> You can test a trial version of this program indefinitely. You can use the Package Control to install a <a href="https://packagecontrol.io/packages/Pymol%20Language">pymol language highighter.</a></li>
+
+<li><a href="https://atom.io/" target="_blank" title="Atom">Atom.</a> This editor is less initutive but more powerful. You can install the <a href="https://atom.io/packages/language-pymol">language-pymol</a> package, which is derived from the <strong>Pymol.tmbundle</strong> for <strong>TextMate</strong>, which runs only on macOS. </li>
+</ul>
+
+<h4>Text Editors For Windows:</h4>
+<ul>
+	<li><a href="http://www.editpadlite.com/">EditPad Lite</a></li>
+	<li><a href="http://www.flos-freeware.ch/notepad2.htmlve="Notepad2">Notepad++</a></li>
+</ul>
+
+<h4>Text Editors For Mac:</h4>
+<ul>
+	<li><a href="http://www.barebones.com/products/textwrangler/" target="_blank" title="TextWrangler">TextWrangler</a></li>
+    <li><a href="http://macromates.com/" target="_blank" title="TextMate pymol highlighter">TextMate. </a> There is a TextMate pymol highlighter too <a href="https://github.com/bbarad/pymol_syntax/tree/master/Syntaxes" target="_blank" title="Pymol.tmbundle"> <strong>(i.e., Pymol.tmbundle)</strong></a>. The color contrast is sharper in Sublime Text 3, but some people may prefer the colors of TextMate.</li>
+</ul>
+
+<h3>Why PyMOL?</h3>
+<ul>
+	<li> Exquistive control over appearance of molecular structure.</li>
+	<li> Large and helpful user community.  </li>
+	<li> Readily extended with scripts and plugins. If you can imagine it, you can do it in PyMOL.  </li>
+	<li> Most popular program for making molecular movies.  </li>
+	<li> Most popular program for making images of molecules for journal cover artwork. </li>
+    <li> Most frequent molecular viewing program in larger structural biology software packages. </li>
+    <li> Has survived for 20 years. It will probably last another 20 years because it is so adaptable. </li>li>
+    <li> It can be extended with Python, which is becoming the most popular programming language in scientific computing. </li>li>
+</ul>
+
+<h3>Good alternatives to PyMOL</h3>
+There are many molecular graphics packages beyond PyMOL. I have listed ones that have caught my attention.
+
+<ul>
+	<li> <a href="https://www.cgl.ucsf.edu/chimera/" target="_blank" title="UCSF Chimera"> <strong>UCSF Chimera </strong></a> Loaded with advanced structural analysis tools. Easily extended with Python scripts.</li>
+
+	<li> <a href="http://www.ccp4.ac.uk/MG/" target="_blank" title="ccp4mg"> <strong>ccp4mg</strong></a> Excellent for making quick and striking images of crystal structures. </li>
+
+	<li> <a href="http://chemapps.stolaf.edu/jmol/presentations/confchem2006/jmol-confchem.htm" target="_blank" title="mmCIF"> <strong>JMOL</strong></a> Very feature rich and customizable with scripts. Not as much precise control over appearance of the structure as with PyMOL, but you can still make publication quality figures. </li>
+
+	<li> <a href="http://chemapps.stolaf.edu/jmol/jsmol/jsmol.htm"> <strong>JSMOL</strong></a> A version o of JMOL that runs interactively in HTML5 webpages. Excellent for displaying molecules on the web. </li>
+
+	<li> <a href="https://github.com/pekrau/MolScript"> <strong> Molscript</strong></a> The venerable program for making molecular images as vector graphic files rather than as png bitmap files as from PyMOL. Molscript had been a commericial software package. It is now open source and available on GitHub.com. </li>
+
+    <li><a href="http://molsoft.com/icm_browser_pro.html"> <strong>Molsoft Browser </strong></a> Free viewer assoicated with a proprietary software suite that is designed to assist structure-based drug design. </li>
+
+	<li> <a href="http://skuld.bmsc.washington.edu/raster3d/" target="_blank" title="Raster3D"> <strong>Raster3D</strong></a> Photorealistic Molecular Graphics. Raster3D makes distinctive figures. </li>
+
+	<li><a href="http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD"> <strong>VMD</strong></a> Visual Molecular Dynamics. The molecular graphics viewer for the NAMD molecular dynamics package. </li>
+
+	<li> <a href=" http://www.yasara.org/"> <strong> Yasara </strong></a>  Yet Another Scientific Aritificial Reality Application. The free viewer makes striking figures with little effort. Proprietary versions enalbe interactive molecular dynamics.</li>
+</ul>
+<A href="#INDICES">Jump back to top </A>
+<br>
+<br>
+
+<h2><a name="2">Lecture 2: PDB files and PyMOL Basics</h2>
+
+<h3>Chapter 10 in Gu and Bourne: PDB, mmCIF and other data formats </h3>
+
+<ul>
+
+	<li><a href="http://sourceforge.net/projects/pdbeditorjl/" target="_blank" title="PDBEditor"><strong>PDBEditor</strong></a> Java base PDB file viewer and editor. It is very powerful it is ability to make selections.</li>
+
+	<li><a href="http://www.wwpdb.org/documentation/file-format" target="_blank" title="PDB file format guide"><strong>PDB file format guide</strong></a> This document explains the fixed column format of the traditional PDB file. Many programs depend on this outdated format. It will likely be in used for another decade. It may be replaced with modern file formats that are flexible but hopelessly hard to read. </li>
+
+	<li><a href="http://rasbt.github.io/biopandas/" target="_blank" title="biopandas"><strong>BioPandas </strong></a> This is a Python module that works with molecular structures in pandas-like DataFrames.</li>
+</ul>
+
+<h3><strong>Chapter 11: The Worldwide Protein Data Bank </strong></h3> 
+
+This chapter explains the organization of the the Protein Data Bank.
+<ul>
+	<li><a href="http://www.wwpdb.org/" target="_blank" title="The Worldwide Protein Data Bank"> <strong>wwPDB</strong><a/>The Worldwide Protein Data Bank </li>
+	<li><a href="http://www.rcsb.org/pdb/home/home.do" target="_blank" title="The RCSB Protein Data Bank"> <strong>RCSB (US PDB)</strong></a>Research Collaboratory for Structural Bioinformatics </li>
+	<li><a href="http://www.pdbe.org/" target="_blank" title="PDBe–Protein Data Bank Europe"><strong>PDBe</strong></a>Protein Data Bank in Europe</li>
+	<li><a href="http://www.pdbj.org/" target="_blank" title="PDBj–PDB Japan"><strong>PDBj</strong></a> Protein Data Bank Japan</li>
+	<li><a href="http://ndbserver.rutgers.edu/" target="_blank" title="NDB–Nucleic Acid Database"><strong>NDB</strong></a> Nucleic Acid Database</li>
+</ul>
+
+<h3>Molecular Visualization</h3>
+
+<h4><strong>Physical Molecular Models</strong></h4>
+<ul>
+	<li><a href="http://cbm.msoe.edu/" target="_blank" title="The Center for BioMolecular Modeling"><strong>The Center for BioMolecular Modeling</strong></a></li>
+
+	<li><a href="http://www.wwpdb.org/documentation/format32/v3.2.html" target="_blank" title="PDB file format documentation"><strong>PDB file format documentation</strong></a></li>
+
+	<li><a href="http://mgl.scripps.edu/" target="_blank" title="The Scripps Molecular Graphics Laboratory"><strong>The Scripps Molecular Graphics Laboratory</strong></a></li>
+</ul>
+
+
+<h3>Molecular Models as Art</h3>
+<ul>
+	<li><a href="http://www.pymolwiki.org/index.php/Covers" target="_blank" title="PyMOL Cover Art"><strong>PyMOL Cover Art</strong></a></li>
+
+	<li><a href="http://mgl.scripps.edu/people/goodsell/mgs_art" target="_blank" title="Molecular Graphics Art Show"><strong>Molecular Graphics Art Show</strong></a></li>
+
+	<li><a href="http://www.kenneth-eward.com/cvp/cvpindex.html" target="_blank" title="Biografx"><strong>Biografx</strong></a></li>
+
+	<li><a href="http://qutemol.sourceforge.net/sidetoside/" target="_blank" title="Qutemol"><strong>Qutemol</strong></a></li>
+</ul>
+<A href="#INDICES">Jump back to top </A>
+<br>
+<br>
+
+<h2><a name="3">Lecture 3: Heteroatoms and Molecular Surfaces</h2>
+
+<h3>Heteratoms</h3>
+<ul>
+	<li><a href="http://mespeus.bch.ed.ac.uk/MESPEUS/" target="_blank" title="Metal Sites in Proteins – MESPEUS database"><strong>Metal Sites in Proteins, MESPEUS database. </strong></a> This actively curated database has valuable statistics on metal--protein ligand bond lengths and angles.</li>
+
+	<li><a href="http://www.molsoft.com/getbrowser.cgi" target="_blank" title="Molesoft Browser Pro (alternative molecular graphic program)"><strong>Molesoft Browser Pro,</strong></a> this is an alternative molecular graphics program that has been customized for structure-based drug design.</li>
+
+	<li><a href="http://eds.bmc.uu.se/eds/valligurl.php" target="_blank" title="ValLigURL Ligand Validator at Uppsala University"><strong>ValLigURL,</strong></a>Ligand Validator at Uppsala University</li>
+
+	<li><a href="http://davapc1.bioch.dundee.ac.uk/prodrg/" target="_blank" title="PRODRG"><strong>PRODRG,</strong></a>this website can return the coordinates of a molecule supplied with a simple 2D diagram in a plain text file. The number of times that you can access this site per day are limited due to its heavy use.</li>
+</ul>
+
+
+
+<h3>Molecular and Electrostatic Surfaces</h3>
+<ul>	
+	<li><a href="http://www.pymolwiki.org/index.php/Surface" target="_blank" title="PymolWiki page on Surfaces"><strong>PymolWiki page on Molecular Surfaces</strong></a></li>
+
+	<li><a href="http://pymolwiki.org/index.php/Displaying_Biochemical_Properties#Residues_with_functional_groups" target="_blank" title="PymolWiki page on Displaying Biochemical Properties"><strong>PymolWiki page on Displaying Biochemical Properties</strong></a></li>
+
+	<li><a href="http://mole.chemi.muni.cz/web/" target="_blank" title="Mole"><strong>Mole,</strong></a> a plugin for mapping clefts</li>
+
+	<li><a href="http://mole.chemi.muni.cz/online/current/" target="_blank" title="On-line alternative for Mole"><strong>On-line version of Mole</strong></a></li>
+
+	<li><a href="http://apbs.sourceforge.net/" target="_blank" title="APBS"><strong>APBS,</strong></a> the Adaptive Poisson Boltzmann Solver</li>
+
+	<li><a href="http://www.pymolwiki.org/index.php/APBS" target="_blank" title="APBS Plugin"><strong>APBS Plugin,</a></strong> explained on the PyMOL wiki</li>
+
+	<li><a href="http://poissonboltzmann.org/apbs/examples/visualization/apbs-electrostatics-in-pymol" target="_blank" title="APBS electrostatics in PyMOL"><strong>APBS electrostatics in PyMOL</strong></a></li>
+
+	<li><a href="http://nbcr-222.ucsd.edu/pdb2pqr_2.0.0/" target="_blank" title="PDB2PQR Server"><strong>PDB2PQR Server,</strong></a> which calculates charges for pdb2pqr files. The server can also run APBS on-line to generate a *.dx file of electrostatic potentials. The *.dx file can be loaded into PyMOL and be rendered with the molecular structure. </li>
+
+	<li><a href="https://sourceforge.net/projects/pdb2pqr/" target="_blank" title="Download site for PDB2PQR"><strong>Download site for PDB2PQR</strong></a></li>
+
+	<li><a href="https://sourceforge.net/projects/pdb2pqr/" target="_blank" title="Delphi"><strong>Delphi </strong></a> The venerable protein electrostatics program that pre-dates APBS and is assoicated with the graphics program GRASP.</li>
+
+	<li><a href="http://compbio.clemson.edu/sapp/delphi_webserver/" target="_blank" title="delphi webserver"><strong>The Delphi webserver</strong></a></li>	
+
+	<li><a href="http://structure.usc.edu/howto/delphi-surface-pymol.html" target="_blank" title="Delphi"><strong>Delphi and PyMOL</strong></a></li>
+</ul>
+<A href="#INDICES">Jump back to top </A>
+<br>
+<br>
+
+
+<h2><a name="4">Lecture 4: Structure Evaluation</h2>
+<ul>
+	<li><a href="http://molprobity.biochem.duke.edu/" target="_blank" title="MOLPROBITY"><strong>MOLPROBITY.</strong></a> The site is used to evaluate the quality of protein and nucleic acid crystal structures. The program uses atom-atom clashes to evaluate struture quality after adding hydrogens. It also provides a current version of the Ramachandran plot. It can be run on-line. The kinemages can be viewed on-line or off line with the King.app. The latter depends on Java. You also have to allow the running of Java programs on your computer under your system preferences.</li>
+
+	
+	<li><a href="https://github.com/jaredsampson/pymolprobity" target="_blank" title="pymolprobity"><strong>pymolprobity</strong></a> A Molprobity visualization plugin for PyMOL. </li>
+
+	<li><a href="http://pdb-extract.rcsb.org/auto-check/index-ext.html" target="_blank" title="SF-TOOL"><strong>SF-TOOL </strong></a> which is used to check x-ray data quality.</li>
+
+	<li><a href="http://skuld.bmsc.washington.edu/~tlsmd/" target="_blank" title="TLS Motion Determination Home"><strong>TLS Motion Determination Home</strong></a></li>
+</ul>
+<A href="#INDICES">Jump back to top </A>
+<br>
+<br>
+
+<h2><a name="5">Lecture 5: Protein Evolution and Prediction of Protein-Protein Interations</h2>
+<h3>Protein-Protein Interaction Databases:</h3>
+<ul>
+	<li><a href="http://interdom.i2r.a-star.edu.sg/" target="_blank" title="InterDom (domain interactions)"><strong>InterDom </strong></a> domain interactions</li>
+
+	<li><a href="http://dip.doe-mbi.ucla.edu/dip/Main.cgi" target="_blank" title="DIP (DB of Interacting Proteins)"><strong>DIP </strong></a> Database of Interacting Proteins</li>
+
+	<li><a href="http://bond.unleashedinformatics.com/" target="_blank" title="BOND (PPI, Prot-DNA, Prot-SM)"><strong>BOND </strong></a></li> 
+
+	<li><a href="http://mint.bio.uniroma2.it/mint/Welcome.do" target="_blank" title="MINT"><strong>MINT </strong></a> Molecular Interactions Database</li>
+
+	<li><a href="http://string.embl.de/" target="_blank" title="STRING (EMBL)"><strong>STRING (EMBL) </strong></a></li>
+
+	<li><a href="http://www.hprd.org/" target="_blank" title="Human Protein Reference Database"><strong>Human Protien Reference Database</strong></a></li>
+</ul>
+<A href="#INDICES">Jump back to top </A>
+<br>
+<br>
+
+
+
+<h2><a name="6">Lecture 6: Structure Superposition and Identifying Molecular Motion from Static Models</h2>
+
+<p> The overlaying or superposing of molecular structures has to be done thoughtfully to lead to meaningful interpretations.</p>
+
+<ul>
+<li><a href="http://www.pymolwiki.org/index.php/Category:Structure_Alignment" target="_blank" title="Structure Alignment"><strong>Structure Alignment</strong></a></li>
+
+	<li><a href="http://pymolwiki.org/index.php/Fit" target="_blank" title="Superposition of pairs of models in PyMOL"><strong>Superposition of pairs of structures in PyMOL</strong></a></li>
+
+	<li><a href="http://pymolwiki.org/index.php/AutoMultiFit" target="_blank" title="Fitting multiple models in PyMOL"><strong>Fitting multiple models in PyMOL</strong></a></li>
+
+	<li><a href="http://www.ncbi.nlm.nih.gov/Structure/MMDB/mmdb.shtml" target="_blank" title="NIH Molecular Modelling Database"><strong>NIH Molecular Modelling Database</strong></a></li>
+
+	<li><a href="http://www.expasy.org/tools/" target="_blank" title="ExPASy Proteomics tools"><strong>ExPASy Proteomics tools</strong></a></li>
+
+	<li><a href="http://bip.weizmann.ac.il/toolbox/structure/tertiary.htm#secondary" target="_blank" title="Tertiary Structure Analysis Links at the Weizmann Institute"><strong>Tertiary Structure Analysis Links at the Weizmann Institute</strong></a></li>
+
+	<li><a href="http://hyuan.imb.sinica.edu.tw/tools/new_linkage/useful_link.html" target="_blank" title="Protein Crystallography Universe Links"><strong>Protein Crystallography Universe Links</strong></a></li>
+
+	<li><a href="http://www.ebi.ac.uk/" target="_blank" title="EMBL-EBI links"><strong>EMBL-EBI links</strong></a></li>
+</ul>
+<A href="#INDICES">Jump back to top </A>
+<br>
+<br>
+
+<h2><a name="7">Lecture 7: Modeling and Dynamics</h2>
+
+<h3> Links cited in lectures</h3>
+<h4> Homology Modeling Software</h4>
+	<ul>   
+		<li><a href="https://toolkit.tuebingen.mpg.de/hhpred" target="_blank" title="Homology Modeling"><strong>HHPred Modeling Server</strong></a></li>
+
+		<li><a href="http://www.nature.com/nprot/journal/v4/n1" target="_blank" title="Nature Protocols 2008 paper"><strong>Nature Protocols 2008 paper</strong></a></li>
+
+		<li><a href="http://kinemage.biochem.duke.edu/teaching/anatax/index.html" target="_blank" title="Homology Modeling"><strong>Jane Richardson's ANATAX site</strong></a></li>
+
+		<li><a href="http://swift.cmbi.ru.nl/gv/pdbreport/" target="_blank" title="PDBREPORT"><strong>PDBREPORT</strong></a> Used to keep the accuracy of the template.</li>
+	</ul>
+
+<h5> Homology Model Quality Checking</h5>
+	<ul>
+		<li><a href="hhttp://www.ncbi.nlm.nih.gov/Structure/MMDB/mmdb.shtml" target="_blank" title="MMDB"><strong>MMDB</strong></a> Used to check the accuracy of the template.</li>
+
+		<li><a href="http://molprobity.biochem.duke.edu/index.php/" target="_blank" title="molprobity"><strong>molprobity</strong></a> </li>
+
+		<li><a href="http://swift.cmbi.ru.nl/gv/pdbreport/" target="_blank" title="PDBREPORT"><strong>PDBREPORT</strong></a></li>
+
+		<li><a href="http://www.expasy.org/tools/" target="_blank" title="EXPASY TOOL"><strong>EXPASY TOOL</strong></a></li>
+
+		<li><a href="http://bip.weizmann.ac.il/toolbox/structure/tertiary.htm#secondary" target="_blank" title="PDBREPORT"><strong>PDBREPORT</strong></a></li>
+
+		<li><a href="http://www.pxuniverse.com/Websites.html" target="_blank" title="pxuniverse"><strong>pxuniverse</strong></a></li>
+
+		<li><a href="http://www.ebi.ac.uk/" target="_blank" title="ebi"><strong>ebi</strong></a></li>
+	</ul>
+
+
+
+<h3> Related links about molecular dynamics, not covered in course </h3>
+<ul>  
+	<li><a href="http://www.mdanalysis.org/about/" target="_blank" title="MDAnalysis"><strong>MDAnalysis </strong></a> A Python package for the analysis of trajetories from molecular dynamics simulations.</li>
+
+	<li><a href="http://www.ks.uiuc.edu/Research/namd/" target="_blank" title="NAMD"><strong>NAMD </strong></a> A parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems. NAMD is based on Charm++ parallel objects. NAMD scales to hundreds of cores for typical simulations and beyond 500,000 cores for the largest simulations. NAMD uses the molecular graphics program VMD for simulation setup and trajectory analysis. NAMD is compatible with AMBER, CHARMM, and X-PLOR. </li> 
+
+	<li><a href="http://lammps.sandia.gov/" target="_blank" title="LAMMPS"><strong>LAMMPS Molecular Dynamics Simulator </strong> Large-scale Atomic/Molecular Massively Parallel Simulator. </a> Available from Sandia Labs.</li>
+
+	<li><a href="http://www.scd.stfc.ac.uk/SCD/44516.aspx" target="_blank" title="DL_poly"><strong> DL_poly</strong> Version 4 </a> is available to British academics only. </li>
+
+	<li><a href="https://ccpforge.cse.rl.ac.uk/gf/project/dl_poly_classic/" target="_blank" title="DL_poly"><strong>DL_poly </strong> version 2</a> is available to all. Development stopped in 2011.</li>
+
+    <li><a href="http://www.ks.uiuc.edu/Research/mdff/" target="_blank" title="MDFF"><strong>MDFF</strong>Molecular Dynamics Flexible Fitting.</a> This is used for improving the fit of small moleculaes and proteins to electron density data from crystallography and electron microscopy.</li>
+
+    <li><a href="http://www.ks.uiuc.edu/Research/mdff/documentation.html" target="_blank" title="MDFF tutorial"><strong>Tutorial Video on MDFF </strong> Molecular Dynamics Flexible Fitting</a></li>
+
+     <li><a href="http://ambermd.org/" target="_blank" title=" "><strong> AMBER Home Page </strong></a></li>
+
+    <li><a href="https://github.com/Amber-MD/pytraj" target="_blank" title="pytraj"><strong>pytraj in Amber-MD at github</strong></a> A Python front-end of cpptraj program (a data analysis package for biomolecular simulation).</li>
+
+    <li><a href="http://amber-md.github.io/pytraj/" target="_blank" title="PYTRAJ"><strong>PYTRAJ </strong> on-line version. </a>  Interactive data analysis for molecular dynamics simulations.</li>
+
+    <li><a href="http://charmm-gui.org" target="_blank" title="charmm-gui"><strong> charmm-gui </strong></a> A web-based graphical user interface to generate various molecular simulation systems and input files to facilitate and standardize the usage of common and advanced simulation techniques. CHARMM-GUI supports CHARMM, NAMD, GROMACS, AMBER, and OpenMM simulation programs.</li>
+
+    <li><a href="https://www.charmm.org/" target="_blank" title="charmm"><strong> charmm </strong> Chemistry at HARvard Macromolecular Mechanics,</a> A non-optimized version of charmm is available for free for academics. </li>
+
+
+    <li><a href="http://www.growmacs.org" target="_blank" title="growmacs.org"><strong>growmacs.org</strong></a></li>
+
+    <li><a href="http://http://www.pymolwiki.org/index.php/GROMACS_Plugin" target="_blank" title="GROMACS_Plugin"><strong>GROMACS Plugin</strong></a></li>
+
+    <li><a href="http://prody.csb.pitt.edu/" target="_blank" title="prody"><strong>prody</strong></a> Required by GROMACS Plugin. Can be installed with pip.</li>
+</ul>
+<A href="#INDICES">Jump back to top </A>
+<br>
+<br>
+
+<h2><a name="8">Lecture 8: Using Rosetta with PyMOL</h2>
+
+
+<h3>Rosetta Commons</h3>
+<ul>
+	<li><a href="https://www.rosettacommons.org/" target="_blank" title="Rosetta"><strong>Rosetta Commons</strong></a></li>
+</ul>
+
+<h3>Rosetta Webservers</h3>
+<ul>
+	<li><a href="http://rosie.rosettacommons.org/" target="_blank" title="Rosie"><strong>Rosie</strong></a></li>
+	<li><a href="http://robetta.bakerlab.org" target="_blank" title="Robetta"><strong>Robetta</strong></a></li>
+	<li><a href="http://rosettadesign.med.unc.edu/" target="_blank" title="Rosetta.design"><strong>Rosetta.design</strong></a></li>
+	<li><a href="http://flexpepdock.furmanlab.cs.huji.ac.il/" target="_blank" title="FlexPepDock"><strong>FlexPepDock</strong></a></li>
+	<li><a href="http://kortemmelab.ucsf.edu/backrub/" target="_blank" title="RosettaBackrub"><strong>RosettaBackrub</strong></a></li>
+	<li><a href="http://funhunt.furmanlab.cs.huji.ac.il/" target="_blank" title="FunHunt"><strong>FunHunt</strong></a></li>
+	<li><a href="http://csrosetta.bmrb.wisc.edu/" target="_blank" title="CS-Rosetta"><strong>CS-Rosetta</strong></a></li>
+	<li><a href="http://rosettadiagrams.org" target="_blank" title="RosettaDiagrams"><strong>RosettaDiagrams</strong></a></li>
+</ul>
+
+<h3>RosettaScripts</h3>
+<ul>
+	<li><a href="https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts" target="_blank" title="Rosetta"><strong>RosettaScripts</strong></a></li>
+</ul>
+
+
+<h3>TopologyBroker</h3>
+<ul>
+	<li><a href="https://www.rosettacommons.org/docs/latest/scripting_documentation/TopologyBroker/BrokeredEnvironment" target="_blank" title="TopologyBroker"><strong>TopologyBroker</strong></a></li>
+</ul>
+
+
+<h3>PyRosetta</h3>
+<ul>
+	<li><a href="http://www.pyrosetta.org/dow"  target="_blank" title="PyRosetta"><strong>PyRosetta</strong></a></li>  
+	<li><a href="https://els.comotion.uw.edu/express_license_technologies/pyrosetta" target="_blank" title="PyRosetta License"><strong>PyRosetta License</strong></a></li>  
+	<li><a href="http://www.pyrosetta.org/documentation"  target="_blank" title="PyRosetta Documentation"><strong>PyRosetta Documentation</strong></a></li>  
+	<li><a href="http://www.pyrosetta.org/scripts"  target="_blank" title="PyRosetta Sample Scripts"><strong>PyRosetta Sample Scripts</strong></a></li> 
+	<li><a href="https://www.rosettacommons.org/docs/latest/scripting_documentation/PyRosetta/PyRosetta-Toolkit" target="_blank" title="PyRosetta-Toolkit"><strong>PyRosetta-Toolkit</strong></a></li>
+</ul>
+
+<h3>Extending the PyMol Viewer</h3>
+<ul>
+	<li><a href="https://www.rosettacommons.org/docs/latest/development_documentation/tutorials/Extending-the-PyMol-Viewer" target="_blank" title="Extending-the-PyMol-Viewer"> <strong> Extending-the-PyMol-Viewer </strong></a></li> 
+</ul>
+
+<h3>Other Rosetta Labs</h3>
+<ul>
+	<li><a href="http://daslab.stanford.edu/index.html"  target="_blank" title="Das Lab">  Das Lab </a> Developer of RNA applications of Rosetta.</li>
+	<li><a href="http://http://www.meilerlab.org/index.php/rosetta-tutorials" target="_blank" title="Meiler Lab"> Tutorial videos from the Meiler Lab</a>a></li>
+</ul>
+<br>
+<br>
+
+
+<h2><a name="9">Lecture 9: Ligand Docking and Designing Mutants</h2>
+<ul>
+	<li><a href="http://dock.compbio.ucsf.edu/" target="_blank" title="dock"><strong>Dock </strong></a> from UCSF. </li>
+	<li><a href="http://zinc.docking.org" target="_blank" title="zinc"><strong>Zinc </strong> Database of chemicals by the Shoichet Lab at UCSF. </a></li>
+	<li><a href="http://autodock.scripps.edu/" target="_blank" title="autodock 4.2"><strong>autodock 4.2</strong></a></li>
+	<li><a href="http://vina.scripps.edu/" target="_blank" title="autodock vina"><strong>autodock vina</strong></a></li>  
+	<li><a href="http://www.molsoft.com/icm_pro.html" target="_blank" title="icm_pro"><strong>icm pro</strong></a></li>
+
+	<li><a href="http://rdock.sourceforge.net/" target="_blank" title="rDock"><strong>rDock main page</strong></a> A open source program for docking of ligands to proteins and nucleic acids. It is installed on the OU Norman supercomputer. It is easy to compile it on Ubuntu. </li>
+
+	<li><a href="https://sourceforge.net/projects/rdock/?source=typ_redirect" target="_blank" title="rDock"><strong> rDock source code</strong></a></li>
+</ul>
+<A href="#INDICES">Jump back to top </A>
+<br>
+<br>
+
+
+<h2><a name="10">Lecture 10: Molecular Movies and Journal Cover Art </h2>
+
+<h3> Cover Art Related Sites</h3>
+<ul>
+	<li><a href="http://en.wikipedia.org/wiki/Raster_graphics" target="_blank" title="Raster graphics"><strong>Raster graphics</strong></a></li>
+	<li><a href="http://en.wikipedia.org/wiki/Vector_graphics" target="_blank" title="Vector graphics"><strong>Vector graphics</strong></a></li>
+	<li><a href="http://pnas.org/content/by/year/2008/by/cover" target="_blank" title="PNAS Cover Art"><strong>PNAS Cover Art</strong></a></li>
+	<li><a href="http://sourceforge.net/projects/pdbeditorjl/" target="_blank" title="PDBEditor"><strong>PDBEditor</strong></a></li>
+	<li><a href="http://www.utf8-chartable.de/" target="_blank" title="unicode fonts"><strong>unicode fonts</strong></a></li>
+	<li><a href="http://www.pymolwiki.org/index.php/Covers" target="_blank" title="PyMOL Cover Art"><strong>PyMOL Cover Art</strong></a></li>
+	<li><a href="http://www.pnl.gov/science/journals/" target="_blank" title="PNNL Cover Art"><strong>PNNL Cover Art</strong></a></li>
+	<li><a href="http://www.journal-cover-art.com/" target="_blank" title="Vendor of Cover Art"><strong>Vendor of Cover Art</strong></a></li>
+	<li><a href="http://vis.lbl.gov/CoverArt" target="_blank" title="Lawrence-Berkeley National Lab"><strong>Lawrence-Berkeley National Lab Cover Art</strong></a></li>
+	<li><a href="http://blogs.nature.com/nautilus/2010/02/making_your_mark_on_the_journa.html" target="_blank" title="Nature Chemistry Advice"><strong>Nature Chemistry Advice</strong></a></li>
+</ul>
+
+<h3>Moleuclar Movies</h3>
+<ul>   
+	<li><a href="http://multimedia.mcb.harvard.edu/" target="_blank" title="BioVisions"><strong>BioVisions</strong></a> at Harvard University</li>
+	<li><a href="http://www.pymolwiki.org/index.php/MovieSchool" target="_blank" title="MovieSchools"><strong>PyMOL Movie School</strong></a></li>
+	<li><a href="http://www.molecularmovies.com/" target="_blank" title="molecularmovies.com"><strong>molecularmovies.com</strong></a> Includes simulations at cellualar levels.</li>
+	<li><a href="http://pymol.org/animate" target="_blank" title="Improved PyMOL movies"><strong>Improved PyMOL movies</strong></a></li>
+	<li><a href="https://www.youtube.com/watch?v=WScPbvUwDno" target="_blank" title="stapled peptide"><strong>Video of stapled peptide</strong></a></li>
+	<li><a href="http://pymol.sourceforge.net/newman/user/S0300movies.html" target="_blank" title="Newman PyMOL movie"><strong>Newman PyMOL movie tutorial</strong></a></li>		
+	<li><a href="https://pymolwiki.org/index.php/EMovie" target="_blank" title="EMovie"><strong>EMovie</strong></a></li>
+	<li><a href="http://people.chem.ucsb.edu/kahn/kalju/CSUPERB/public/pymol_movies.html" target="_blank" title="Creating Movies with PyMOL"><strong>Creating Movies with PyMOL</strong></a></li>
+	<li><a href="http://pymol.sourceforge.net/newman/user/S0300movies.html" target="_blank" title="stapled peptide"><strong>Newman PyMOL movie tutorial</strong></a></li>
+	<li><a href="http://people.chem.ucsb.edu/kahn/kalju/chem110L/public/tutorial/movies.html" target="_blank" title="PyMOL Movies"><strong>PyMOL Movies</strong></a></li>
+</ul>
+<A href="#INDICES">Jump back to top </A>
+<br>
+</div>
+</body>
+</html>
